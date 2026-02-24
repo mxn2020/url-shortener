@@ -1,76 +1,94 @@
 # URL Shortener with Analytics
 
-## Pages & Features
+Shorten URLs and track click analytics.
 
-### 1. Dashboard
-- Total links created
-- Total clicks (today / this week / all time)
-- Top performing links chart
-- Recent click activity feed
-- Geographic click map
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Create Short Link
-- Enter long URL
-- Custom alias / slug option
-- QR code auto-generation
-- Expiry date option
-- Password protection toggle
-- UTM parameter builder
-- Tags & campaign assignment
-- Bulk URL shortening (CSV upload)
+## Tech Stack
 
-### 3. Links
-- Link list with search, tag, date filters
-- Link detail: short URL, original URL, QR code, stats
-- Edit destination URL
-- Enable / disable link
-- Delete link
-- Copy short URL to clipboard
-- Share via email / social
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Link Analytics
-- Click count over time (line chart)
-- Clicks by referrer source
-- Clicks by device (desktop, mobile, tablet)
-- Clicks by browser & OS
-- Clicks by country & city (geo map)
-- Click timeline (individual click log)
-- Unique vs. total clicks
+## Getting Started
 
-### 5. QR Codes
-- Generate QR code for any link
-- Customize QR code (colors, logo embed)
-- Download QR code (PNG, SVG)
-- QR code scan analytics
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Campaigns
-- Group links into campaigns
-- Campaign-level analytics (aggregated clicks)
-- Campaign performance comparison
-- UTM tracking summary
+## License
 
-### 7. Custom Domains
-- Add custom branded domain
-- DNS configuration instructions
-- SSL auto-provisioning
-- Domain verification status
+MIT © Mehdi Nabhani
 
-### 8. API & Integrations
-- API key management
-- REST API documentation (create, update, delete, stats)
-- Webhook for click events
-- Browser extension for quick shortening
+---
 
-### 9. Reports
-- Click report by date range
-- Top links by clicks
-- Geographic distribution
-- Device & platform breakdown
-- Export as PDF / CSV
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Settings
-- Profile & account management
-- Default link options (expiry, password)
-- Custom domain management
-- Notification preferences (milestone alerts)
-- Team members & roles
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
